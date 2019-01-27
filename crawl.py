@@ -61,6 +61,5 @@ email = input("请输入账号邮箱：")
 password = input("请输入密码：")
 
 process = CrawlerProcess(get_project_settings())
-# 'followall' is the name of one of the spiders of the project.
 process.crawl(HuabanSpider, email=email, password=password)
 process.start()  # the script will block here until the crawling is finished
