@@ -55,11 +55,11 @@ import scrapy.core.downloader.contextfactory
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 
-from huaban.spiders.spiders import HuabanSpider
+from alibaba.spiders.spiders import AlibabaSpider
 
 email = input("请输入账号邮箱：")
 password = input("请输入密码：")
 
 process = CrawlerProcess(get_project_settings())
-process.crawl(HuabanSpider, email=email, password=password)
+process.crawl(AlibabaSpider, email=email, password=password)
 process.start()  # the script will block here until the crawling is finished

@@ -4,10 +4,10 @@ block_cipher = None
 
 
 a = Analysis(['crawl.py'],
-             pathex=['.\\huaban'],
+             pathex=['.\\alibaba'],
              binaries=[],
              datas=[(".\\scrapy.cfg",".")],
-             hiddenimports=["huaban.items","huaban.middlewares",'huaban.pipelines','huaban.settings','huaban.spiders'],
+             hiddenimports=["alibaba.items","alibaba.middlewares",'alibaba.pipelines','alibaba.settings','alibaba.spiders'],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],

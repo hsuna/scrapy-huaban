@@ -4,7 +4,7 @@
 
 ```
 ./root
-├── huaban                 // scrapy项目
+├── alibaba                 // scrapy项目
 │   ├── spiders            
 │   ├── items.py           
 │   ├── middlewares.py     

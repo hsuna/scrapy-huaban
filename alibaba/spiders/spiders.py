@@ -8,11 +8,11 @@ import winreg
 import scrapy
 from scrapy.spiders import CrawlSpider
 from scrapy.http import Request, FormRequest
-from huaban.items import HuabanItem
+from alibaba.items import AlibabaItem
 import logging
 
-class HuabanSpider(CrawlSpider):
-    name='huaban'
+class AlibabaSpider(CrawlSpider):
+    name='alibaba'
     limit=100
     base_url='http://login.meiwu.co/'
     cdn_url='http://img.hb.aicdn.com/'
@@ -37,7 +37,7 @@ class HuabanSpider(CrawlSpider):
     }
 
     def __init__(self, email='', password='', *args, **kwargs):
-        super(HuabanSpider, self).__init__(*args, **kwargs)
+        super(AlibabaSpider, self).__init__(*args, **kwargs)
         self.email = email
         self.password = password
 
@@ -64,11 +64,13 @@ class HuabanSpider(CrawlSpider):
             callback=self.request_board
         )
 
+
     def request_board(self, response):
         data = json.loads(response.body)
 
         if 'user' in data:
             self.urlname = data['user']["urlname"]
+
             # 创建保存目录
             self.save_path = self.create_save_path(self.urlname)
             os.system('pause') #按任意键继续
@@ -95,7 +97,7 @@ class HuabanSpider(CrawlSpider):
             pin_id = pin["pin_id"]
             max = max if int(pin_id) < max else int(pin_id)
             
-            item = HuabanItem()
+            item = AlibabaItem()
             item["savePath"] = self.save_path
             item["imgDir"] = pin["board"]["title"]
             item["imgName"] = str(pin["file_id"])

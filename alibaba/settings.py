@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for Huaban project
+# Scrapy settings for Alibaba project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,13 +9,13 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'huaban'
+BOT_NAME = 'alibaba'
 
-SPIDER_MODULES = ['huaban.spiders']
-NEWSPIDER_MODULE = 'huaban.spiders'
+SPIDER_MODULES = ['alibaba.spiders']
+NEWSPIDER_MODULE = 'alibaba.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'huaban (+http://www.yourdomain.com)'
+#USER_AGENT = 'alibaba (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -47,13 +47,13 @@ COOKIES_DEBUG = True #这个是在log中能看到每次请求发出了和接收�
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'huaban.middlewares.HuabanSpiderMiddleware': 543,
+#    'alibaba.middlewares.AlibabaSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'huaban.middlewares.HuabanDownloaderMiddleware': 543,
+#    'alibaba.middlewares.AlibabaDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ COOKIES_DEBUG = True #这个是在log中能看到每次请求发出了和接收�
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'huaban.pipelines.HuabanPipeline': 300,
+    'alibaba.pipelines.AlibabaPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -7,7 +7,7 @@
 
 import scrapy
 
-class HuabanItem(scrapy.Item):
+class AlibabaItem(scrapy.Item):
     # define the fields for your item here like:
     # 保存路径
     savePath = scrapy.Field()
