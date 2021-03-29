@@ -14,8 +14,7 @@ import logging
 class AlibabaSpider(CrawlSpider):
     name='alibaba'
     limit=100
-    base_url='http://login.meiwu.co/'
-    cdn_url='http://img.hb.aicdn.com/'
+    base_url='https://passport.alibaba.com/newlogin/icbuLogin.htm'
     urlname=''
 
     custom_settings={
@@ -36,14 +35,14 @@ class AlibabaSpider(CrawlSpider):
         "X-Requested-With": "XMLHttpRequest",
     }
 
-    def __init__(self, email='', password='', *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super(AlibabaSpider, self).__init__(*args, **kwargs)
-        self.email = email
-        self.password = password
+        self.email = 'sales01@catson.cn'
+        self.password = 'Tlf9!!AcjzJp'
 
     def start_requests(self):
         return [Request(
-            url=self.get_url('login'),
+            url=self.base_url,
             meta={'cookiejar': 1}, 
             dont_filter=False,
             callback=self.post_login
